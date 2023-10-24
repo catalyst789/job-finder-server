@@ -8,8 +8,9 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
 server.use((req: Request, res: Response, next: NextFunction) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  res.header(
     "Access-Control-Allow-Methods",
     "GET, POST, PUT, PATCH, DELETE, OPTIONS"
   );
@@ -24,4 +25,4 @@ server.get("/health", (req: Request, res: Response) => {
 
 server.use("/jobs", jobRouter);
 
-server.listen(3000, () => console.log("Server is up at 3000"));
+server.listen(4000, () => console.log("Server is up at 4000"));
