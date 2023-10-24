@@ -1,0 +1,6 @@
+.vercel
+package-lock.json
+yarn.lock
+dist
+vercel.json
+node_modules
